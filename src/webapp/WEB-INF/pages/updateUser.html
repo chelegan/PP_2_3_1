@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New User</title>
+  <style>
+    form {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/update}" th:object="${user}">
+
+  <input hidden="hidden" type="number" th:field="*{id}" id="id">
+
+  <label for="newFirstName"> Name: </label>
+  <input type="text" th:field="*{firstName}" id="newFirstName"/>
+  <br/>
+  <br/>
+
+  <label for="newLastName"> Surname: </label>
+  <input type="text" th:field="*{lastName}" id="newLastName"/>
+  <br/>
+  <br/>
+
+  <label for="newAge"> Age: </label>
+  <input type="text" th:field="*{age}" id="newAge"/>
+  <br/>
+  <br/>
+
+  <input type="submit" value="Update user"/>
+</form>
+</body>
+</html>
