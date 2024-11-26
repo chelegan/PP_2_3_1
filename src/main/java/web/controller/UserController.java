@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/addUser")
-    public String FormForAddUser(@ModelAttribute("user") User user) {
+    public String formForAddUser(@ModelAttribute("user") User user) {
         return "addUser";
     }
 
