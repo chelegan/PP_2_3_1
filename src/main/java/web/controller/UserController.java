@@ -22,13 +22,13 @@ public class UserController {
     }
 
     @GetMapping(value = "/users")
-    public String index(ModelMap model) {
+    public String getAllUsers(ModelMap model) {
         model.addAttribute("users", userService.getListOfAllUsers());
         return "usersIndex";
     }
 
     @GetMapping(value = "/addUser")
-    public String formForAddUser(@ModelAttribute("user") User user) {
+    public String getFormForAddUser(@ModelAttribute("user") User user) {
         return "addUser";
     }
 
@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @GetMapping("/update")
-    public String formForUpdateUser(Model model, @RequestParam("id") int id) {
+    public String getFormForUpdateUser(Model model, @RequestParam("id") int id) {
         model.addAttribute("user", userService.getUser(id));
         return "updateUser";
     }
